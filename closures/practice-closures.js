@@ -9,12 +9,19 @@
   */
   
   //CODE HERE
+  function myFunc () {
+    const myStr = 'super secret string'
+    function getSecretString () {
+      return myStr
+    }
 
+    return getSecretString
+  }
   
   //Now create a variable called secretString. Its value should be the invocation of myFunc.
 
   //CODE HERE
-  
+  const secretString = myFunc()
   
   ////////////PROBLEM 2////////////
 
@@ -29,28 +36,39 @@
   */
   
   //CODE HERE
-
+  function lightSwitch () {
+    const isTheLightOn = false
+    function flipTheSwitch () {
+      
+      if (isTheLightOn === false) {
+        return 'The light is off'
+      } else if (isTheLightOn === true) {
+        return 'The light is on'
+      }
+    }
+    return flipTheSwitch
+  }
   
   //Create a variable called kitchenSwitch whose value is the invocation of lightSwitch.
   
   //CODE HERE
-
+  const kitchenSwitch = lightSwitch()
   
   //Invoke kitchenSwitch.
 
   //CODE HERE
-  
+  kitchenSwitch
   
   //Create a variable called bathroomSwitch whose value is the invocation of lightSwitch. 
 
   //CODE HERE
-  
+  const bathroomSwitch = lightSwitch()
   
   //Invoke bathroomSwitch twice.
   
   //CODE HERE
-
-  
+  bathroomSwitch
+  bathroomSwitch
   
   ////////////PROBLEM 3////////////
 
@@ -64,6 +82,23 @@
   */
 
   //CODE HERE
+  function plantTracker () {
+    const plant = 'fern'
+    const height = 12
+    return {
+      readInfo: function() {
+        return `This is a ${plant} plant that is ${height} inches tall.`
+      },
+      waterPlant: function() {
+        height++
+        return height
+      },
+      prunePlant: function() {
+        height = height - 1
+        return height
+      }
+    }
+  }
 
 
   ////////////PROBLEM 4////////////
@@ -79,6 +114,20 @@
   */
 
   //CODE HERE
+  function inventory () {
+    const products = []
+    return {
+      readProducts: function () {
+        return products
+      },
+      addToProducts: function (str) {
+        products.push(str)
+      },
+      deleteFromProducts: function (index) {
+        products.splice(index, 1)
+      }
+    }
+  }
 
 
   /*
@@ -86,6 +135,7 @@
   */
 
   //CODE HERE
+  const shoes = inventory()
 
 
   /*
@@ -93,4 +143,4 @@
   */
 
   //CODE HERE
-
+  addToProducts
